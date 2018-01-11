@@ -11,10 +11,11 @@ verify_token = 'verifythistokenotherwiseillbeatyourshitup'
 
 @bot.route('/', methods=['GET'])
 def hub_challenge_verification():
-	if request.args.get("hub.mode")=="subscribe" and request.args.get("hub.challenge"):
-		if not request.args.get("hub.verify_token") == verify_token:
-			return "Verification Invalid", 403
-		return request.args.get('hub.challenge','')
+	return "Done"
+	# if request.args.get("hub.mode")=="subscribe" and request.args.get("hub.challenge"):
+	# 	if not request.args.get("hub.verify_token") == verify_token:
+	# 		return "Verification Invalid", 403
+	# 	return request.args.get('hub.challenge','')
 
 
 @bot.route('/', methods=['POST'])
