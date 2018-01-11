@@ -6,7 +6,7 @@ from flask import Flask, request
 
 bot = Flask(__name__)
 
-page_access_token='EAAMWpBkxQbIBAAsLLfDZCgooTDx7ifR6lTpLzaBtJmOZB7MWjf5K9zEhHDASbsWEfwO6YeFZCS1DhP6piZAJrX2aFVtqGbCiMbaRXZCuTZCQr3FSHEwfMm26EgRQqwKBPv8xbWjeQe8hZBxM7Xbq0kGIzlHwNozZCxZBmcO7aPUVQZBAZDZD'
+PAGE_ACCESS_TOKEN='EAAMWpBkxQbIBAAsLLfDZCgooTDx7ifR6lTpLzaBtJmOZB7MWjf5K9zEhHDASbsWEfwO6YeFZCS1DhP6piZAJrX2aFVtqGbCiMbaRXZCuTZCQr3FSHEwfMm26EgRQqwKBPv8xbWjeQe8hZBxM7Xbq0kGIzlHwNozZCxZBmcO7aPUVQZBAZDZD'
 VERIFY_TOKEN = 'verifythistokenotherwiseillbeatyourshitup'
 
 @bot.route('/', methods=['GET'])
@@ -33,7 +33,7 @@ def send_message(person_who_will_receive, message):
 	# reply_object = Reply(message)
 	# message_data = reply_object.get_reply()
 
-	params = {"access_token": page_access_token}
+	params = {"access_token": PAGE_ACCESS_TOKEN}
 	headers = {"Content-Type": "application/json"}
 	data = json.dumps({
 		"recipient":{"id": person_who_will_receive},
