@@ -1,6 +1,5 @@
 Flask
 requests
-json
 os
 Jinja2
 Werkzeug
