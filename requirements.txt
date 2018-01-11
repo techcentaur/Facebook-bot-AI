@@ -1,7 +1,5 @@
 Flask
 requests
-os
 Jinja2
 Werkzeug
-heroku
 gunicorn
