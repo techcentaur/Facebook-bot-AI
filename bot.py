@@ -7,12 +7,12 @@ from flask import Flask, request
 bot = Flask(__name__)
 
 page_access_token='EAAMWpBkxQbIBAAsLLfDZCgooTDx7ifR6lTpLzaBtJmOZB7MWjf5K9zEhHDASbsWEfwO6YeFZCS1DhP6piZAJrX2aFVtqGbCiMbaRXZCuTZCQr3FSHEwfMm26EgRQqwKBPv8xbWjeQe8hZBxM7Xbq0kGIzlHwNozZCxZBmcO7aPUVQZBAZDZD'
-verify_token = 'verifythistokenotherwiseillbeatyourshitup'
+VERIFY_TOKEN = 'verifythistokenotherwiseillbeatyourshitup'
 
 @bot.route('/', methods=['GET'])
 def hub_challenge_verification():
 	if request.args.get("hub.mode")=="subscribe" and request.args.get("hub.challenge"):
-		if not request.args.get("hub.verify_token") == verify_token:
+		if not request.args.get("hub.VERIFY_TOKEN") == VERIFY_TOKEN:
 			return "Verification Invalid", 403
 		return request.args.get('hub.challenge','')
 
