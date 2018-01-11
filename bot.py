@@ -30,7 +30,7 @@ def webhook():
 			send_message(sender, "Hi")
 
 	except Exception as e:
-		print traceback.format_exc()
+		print ("error")
 
 def send_message(person_who_will_receive, message):
 
