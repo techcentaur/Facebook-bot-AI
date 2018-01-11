@@ -38,9 +38,10 @@ def send_message(person_who_will_receive, message):
 
 	params = {"access_token": page_access_token}
 	headers = {"Content-Type": "application/json"}
-    data = json.dumps({"recipient": {"id": person_who_will_receive},"message": {"text": message_data}})
-
-    r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
-
-    if r.status_code != requests.codes.ok:
-    	print (r.text)
+	data = json.dumps({
+		"recipient":{"id": person_who_will_receive},
+		"message": {"text": message_data}
+		})
+	r=requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
+    # if r.status_code!=requests.codes.ok:
+    # 	print(r.text)
