@@ -1,2 +1,0 @@
-https://calm-sierra-47263.herokuapp.com/
-https://git.heroku.com/calm-sierra-47263.git

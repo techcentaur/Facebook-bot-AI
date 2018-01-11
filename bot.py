@@ -6,8 +6,8 @@ from flask import Flask, request
 
 bot = Flask(__name__)
 
-page_access_token=''
-verify_token = ''
+page_access_token='EAAMWpBkxQbIBAAsLLfDZCgooTDx7ifR6lTpLzaBtJmOZB7MWjf5K9zEhHDASbsWEfwO6YeFZCS1DhP6piZAJrX2aFVtqGbCiMbaRXZCuTZCQr3FSHEwfMm26EgRQqwKBPv8xbWjeQe8hZBxM7Xbq0kGIzlHwNozZCxZBmcO7aPUVQZBAZDZD'
+verify_token = 'verifythistokenotherwiseillbeatyourshitup'
 
 @bot.route('/', methods=['GET'])
 def hub_challenge_verification():
@@ -26,15 +26,15 @@ def webhook():
 			sender = event['sender']['id']
 			receiver = event['recipient']['id']
 			message = event['message']['text']
-			send_message(sender, message)
+			send_message(sender, "Hi")
 
 	except Exception as e:
 		print traceback.format_exc()
 
 def send_message(person_who_will_receive, message):
 
-	reply_object = Reply(message)
-	message_data = reply_object.get_reply()
+	# reply_object = Reply(message)
+	# message_data = reply_object.get_reply()
 
 	params = {"access_token": page_access_token}
 	headers = {"Content-Type": "application/json"}
